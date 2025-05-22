@@ -20,11 +20,22 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          👋 Hi, I’m a <span className="font-semibold text-orange-500">Frontend Developer</span> with hands-on experience in <strong>React.js</strong>, <strong>Tailwind CSS</strong>, and modern JavaScript ecosystems.
-          <br /><br />
-          🚀 I enjoy transforming complex requirements into simple, beautiful interfaces. From sleek portfolios to dynamic dashboards and e-commerce platforms—I’m passionate about building things that are fast, responsive, and elegant.
-          <br /><br />
-          🎯 My goal is to create seamless digital experiences that not only perform well but also make users feel right at home.
+          👋 Hi, I’m a{' '}
+          <span className="font-semibold text-orange-500">
+            Frontend Developer
+          </span>{' '}
+          with hands-on experience in <strong>React.js</strong>,{' '}
+          <strong>Tailwind CSS</strong>, and modern JavaScript ecosystems.
+          <br />
+          <br />
+          🚀 I enjoy transforming complex requirements into simple, beautiful
+          interfaces. From sleek portfolios to dynamic dashboards and e-commerce
+          platforms—I’m passionate about building things that are fast,
+          responsive, and elegant.
+          <br />
+          <br />
+          🎯 My goal is to create seamless digital experiences that not only
+          perform well but also make users feel right at home.
         </motion.p>
       </div>
     </div>
