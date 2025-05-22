@@ -27,17 +27,13 @@ const Navbar = () => {
         </div>
       </div>
       {menuOpen && (
-        <div className="md:hidden bg-blue-600 px-4 pb-4">
+        <div className="md:hidden bg-[#2f4b6b] px-4 pb-4">
           <ul className="space-y-4 font-medium text-white">
             <li><ScrollLink to="home" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Home</ScrollLink></li>
             <li><ScrollLink to="about" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">About</ScrollLink></li>
             <li><ScrollLink to="projects" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Projects</ScrollLink></li>
             <li><ScrollLink to="contact" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Contact</ScrollLink></li>
-            <li>
-              <button className="w-full mt-2 py-2 bg-white text-blue-600 rounded font-bold flex items-center justify-center space-x-2">
-                <span>Apply Now</span> <FiArrowRight />
-              </button>
-            </li>
+            
           </ul>
         </div>
       )}
