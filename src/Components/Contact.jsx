@@ -76,7 +76,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              placeholder="Email*"
+              placeholder="Your Email*"
               className="w-full border text-black border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
             />

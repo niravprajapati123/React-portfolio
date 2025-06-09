@@ -4,12 +4,22 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import { Link as ScrollLink } from "react-scroll";
 import { motion } from "framer-motion";
+import Services from "./Services";
 
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <div id="home" className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover z-0">
+      <div
+        id="home"
+        className="relative min-h-screen flex items-center justify-center text-white overflow-hidden"
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute w-full h-full object-cover z-0"
+        >
           <source src="/video/BackVideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -20,9 +30,15 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Hi, I'm Nirav</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+            Hi, I'm Nirav
+          </h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-6">
-            A passionate <span className="text-purple-400 font-semibold">Frontend Developer</span> crafting responsive and user-centric web experiences.
+            A passionate{" "}
+            <span className="text-purple-400 font-semibold">
+              Frontend Developer
+            </span>{" "}
+            crafting responsive and user-centric web experiences.
           </p>
           <ScrollLink
             to="projects"
@@ -38,6 +54,9 @@ const Home = () => {
 
       <div id="about">
         <About />
+      </div>
+      <div id="services">
+        <Services />
       </div>
 
       <div id="projects">

@@ -17,6 +17,7 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center space-x-8 uppercase font-semibold tracking-wide text-white">
           <li><ScrollLink to="home" smooth duration={500} offset={-60} className="cursor-pointer hover:text-orange-300">Home</ScrollLink></li>
           <li><ScrollLink to="about" smooth duration={500} offset={-60} className="cursor-pointer hover:text-orange-300">About</ScrollLink></li>
+          <li><ScrollLink to="services" smooth duration={500} offset={-60} className="cursor-pointer hover:text-orange-300">Services</ScrollLink></li>
           <li><ScrollLink to="projects" smooth duration={500} offset={-60} className="cursor-pointer hover:text-orange-300">Projects</ScrollLink></li>
           <li><ScrollLink to="contact" smooth duration={500} offset={-60} className="bg-white text-blue-600 font-bold px-4 py-2 rounded hover:bg-gray-100 flex items-center space-x-2 transition cursor-pointer">Contact</ScrollLink></li>
         </ul>
@@ -33,6 +34,7 @@ const Navbar = () => {
             <li><ScrollLink to="about" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">About</ScrollLink></li>
             <li><ScrollLink to="projects" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Projects</ScrollLink></li>
             <li><ScrollLink to="contact" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Contact</ScrollLink></li>
+            <li><ScrollLink to="services" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Services</ScrollLink></li>
             
           </ul>
         </div>
