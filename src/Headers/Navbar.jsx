@@ -32,9 +32,9 @@ const Navbar = () => {
           <ul className="space-y-4 font-medium text-white">
             <li><ScrollLink to="home" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Home</ScrollLink></li>
             <li><ScrollLink to="about" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">About</ScrollLink></li>
+            <li><ScrollLink to="services" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Services</ScrollLink></li>
             <li><ScrollLink to="projects" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Projects</ScrollLink></li>
             <li><ScrollLink to="contact" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Contact</ScrollLink></li>
-            <li><ScrollLink to="services" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Services</ScrollLink></li>
             
           </ul>
         </div>
