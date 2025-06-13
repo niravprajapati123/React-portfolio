@@ -1,10 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const projectList = [
     {
-      title: "🛍️ E-commerce Fashion Store (Seller & User Side)",
+      title: "\ud83c\udf6d E-commerce Fashion Store (Seller & User Side)",
       tech: "React.js, Tailwind CSS, Redux, Node.js, MongoDB",
       description: [
         "Developed a full-stack fashion e-commerce web application with separate interfaces for users and sellers.",
@@ -19,7 +21,7 @@ const Projects = () => {
       ]
     },
     {
-      title: "🛒 Frontend Online Shopping Store",
+      title: "\ud83d\uded2 Frontend Online Shopping Store",
       tech: "React.js, Redux, Tailwind CSS, React Router",
       description: [
         "Developed a responsive and interactive frontend shopping application.",
@@ -30,7 +32,7 @@ const Projects = () => {
       ]
     },
     {
-      title: "💼 Portfolio Website",
+      title: "\ud83d\udcbc Portfolio Website",
       tech: "React.js, Tailwind CSS",
       description: [
         "Designed and built a responsive personal portfolio website.",
@@ -39,7 +41,7 @@ const Projects = () => {
       ]
     },
     {
-      title: "📧 Contact Form",
+      title: "\ud83d\udce7 Contact Form",
       tech: "React, EmailJS, Node.js (optional backend)",
       description: [
         "Built a functional contact form that integrates with EmailJS.",
@@ -50,42 +52,66 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 px-6 py-16 flex items-center justify-center">
-      <motion.div
-        className="w-full max-w-5xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 px-6 py-16">
+      <motion.h2
+        className="text-4xl font-bold text-gray-800 mb-12 text-center border-b-2 inline-block border-orange-400 pb-2"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
       >
-        <motion.h2
-          className="text-4xl font-bold text-gray-800 mb-10 text-center border-b-2 inline-block border-orange-400 pb-2"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          My Projects
-        </motion.h2>
+        My Projects
+      </motion.h2>
 
-        <div className="space-y-8">
-          {projectList.map((project, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {projectList.map((project, index) => (
+          <motion.div
+            key={index}
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl p-6 cursor-pointer transition-all"
+            whileHover={{ scale: 1.03 }}
+            onClick={() => setSelectedProject(project)}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 + index * 0.1 }}
+          >
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">{project.title}</h3>
+            <p className="text-sm text-orange-500">{project.tech}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedProject(null)}
+          >
             <motion.div
-              key={index}
-              className="p-6 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + index * 0.2 }}
+              className="bg-white rounded-xl p-6 max-w-xl w-full relative"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-xl font-semibold text-gray-800">{project.title}</h3>
-              <p className="text-sm text-orange-500 mt-1 mb-2">{project.tech}</p>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-2 right-4 text-gray-500 hover:text-red-500"
+              >
+                &times;
+              </button>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">{selectedProject.title}</h3>
+              <p className="text-sm text-orange-500 mb-4">{selectedProject.tech}</p>
               <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                {project.description.map((point, i) => (
+                {selectedProject.description.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
               </ul>
             </motion.div>
-          ))}
-        </div>
-      </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
