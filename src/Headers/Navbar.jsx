@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { FiArrowRight } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,19 +24,23 @@ const Navbar = () => {
         </ul>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none">
-            {menuOpen ? "✖" : "☰"}
+            {menuOpen ? "" : "☰"}
           </button>
         </div>
       </div>
       {menuOpen && (
-        <div className="md:hidden bg-[#2f4b6b] px-4 pb-4">
-          <ul className="space-y-4 font-medium text-white">
+        <div className="md:hidden fixed top-16 left-4 right-4 bg-white text-gray-800 rounded-xl shadow-lg z-50 p-6 animate-slide-in">
+          <div className="flex justify-end">
+            <button onClick={closeMenu} className="text-2xl text-gray-700 hover:text-red-500">
+              <MdClose />
+            </button>
+          </div>
+          <ul className="space-y-4 font-medium text-center">
             <li><ScrollLink to="home" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Home</ScrollLink></li>
             <li><ScrollLink to="about" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">About</ScrollLink></li>
             <li><ScrollLink to="services" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Services</ScrollLink></li>
             <li><ScrollLink to="projects" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Projects</ScrollLink></li>
             <li><ScrollLink to="contact" smooth duration={500} offset={-60} onClick={closeMenu} className="block cursor-pointer">Contact</ScrollLink></li>
-            
           </ul>
         </div>
       )}

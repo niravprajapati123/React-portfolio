@@ -36,7 +36,7 @@ const Contact = () => {
 
           <div>
             <h4 className="text-sm font-bold tracking-wide uppercase">Email</h4>
-            <p className="text-2xl font-semibold">niravprajapati5942@gmail.com</p>
+            <p className="text-2xl font-semibold">nirav10102002@gmail.com</p>
           </div>
 
           <div>
@@ -47,10 +47,8 @@ const Contact = () => {
           <div>
             <h4 className="text-sm font-bold tracking-wide uppercase">Follow Me</h4>
             <div className="flex gap-4 mt-2">
-              <a href="#" className="bg-white p-2 rounded text-[#2f4b6b] hover:bg-gray-200">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="bg-white p-2 rounded text-[#2f4b6b] hover:bg-gray-200">
+      
+              <a href="https://www.instagram.com/code.crafters09/" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded text-[#2f4b6b] hover:bg-gray-200">
                 <i className="fab fa-instagram"></i>
               </a>
               <a href="https://www.linkedin.com/in/nirav-prajapati-4b6896286/" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded text-[#2f4b6b] hover:bg-gray-200">
